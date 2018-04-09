@@ -1,1 +1,8 @@
 c:\users\mahde\documents\visual studio 2015\Projects\image-processing3\image-processing3\bin\Debug\image-processing3.exe.config
+c:\users\mahde\documents\visual studio 2015\Projects\image-processing3\image-processing3\bin\Debug\image-processing3.exe
+c:\users\mahde\documents\visual studio 2015\Projects\image-processing3\image-processing3\bin\Debug\image-processing3.pdb
+c:\users\mahde\documents\visual studio 2015\Projects\image-processing3\image-processing3\obj\Debug\image_processing3.Form1.resources
+c:\users\mahde\documents\visual studio 2015\Projects\image-processing3\image-processing3\obj\Debug\image_processing3.Properties.Resources.resources
+c:\users\mahde\documents\visual studio 2015\Projects\image-processing3\image-processing3\obj\Debug\image-processing3.csproj.GenerateResource.Cache
+c:\users\mahde\documents\visual studio 2015\Projects\image-processing3\image-processing3\obj\Debug\image-processing3.exe
+c:\users\mahde\documents\visual studio 2015\Projects\image-processing3\image-processing3\obj\Debug\image-processing3.pdb
