@@ -82,8 +82,8 @@ namespace image_processing3
                     {
                         Color PixelColor = f_image.GetPixel(j, i);
                         int C_gray = (int)(PixelColor.R + PixelColor.G + PixelColor.B) / 3;
-                        
-                        image.SetPixel(j, i, Color.FromArgb(C_gray, C_gray, C_gray));
+
+                        image.SetPixel(j, i, System.Drawing.Color.FromArgb(C_gray, C_gray, C_gray));
 
                     }
                 }
@@ -102,18 +102,18 @@ namespace image_processing3
                         countColor[C_gray]++;
                     }
                 }
-                //running sum
+                
                 runningSum[0] = countColor[0];
                 for (int i = 1; i < 256; i++)
                 {
                     runningSum[i] = runningSum[i - 1] + countColor[i];
-                    //Console.WriteLine(countColor[i] +"//"+ runningSum[i]);
+                    
                 }
 
                 for (int i = 0; i < 256; i++)
                 {
                     runningSum[i] = Math.Round(runningSum[i] / pixel * color);
-                    //Console.WriteLine(runningSum[i]);
+                    
                 }
 
                 image = new Bitmap(f_image.Width, f_image.Height);
@@ -124,10 +124,28 @@ namespace image_processing3
                         Color PixelColor = f_image.GetPixel(i, j);
                         int C_gray = (int)(PixelColor.R + PixelColor.G + PixelColor.B) / 3;
                         int NewColor = (int)runningSum[C_gray];
-                        image.SetPixel(i, j, Color.FromArgb(NewColor, NewColor, NewColor));
+                        image.SetPixel(i, j, System.Drawing.Color.FromArgb(NewColor, NewColor, NewColor));
                     }
                 }
                 pictureBox2.Image = image;
+
+                int[] arrGray = new int[256];
+
+                for (int i = 0; i < f_image.Width; i++)
+                {
+                    for (int j = 0; j < f_image.Height; j++)
+                    {
+                        Color PixelColor = f_image.GetPixel(i, j);
+                        arrGray[PixelColor.R]++;
+                    }
+                }
+
+
+                for (int i = 1; i < arrGray.Length; i++)
+                {
+                    this.Histogram.Series["Color"].Points.AddXY(i, arrGray[i]);
+
+                }
             }
         }
 
@@ -150,27 +168,27 @@ namespace image_processing3
 
                     if (C_gray >= color_6)
                     {
-                        image.SetPixel(i, j, Color.FromArgb(218, 112, 214));
+                        image.SetPixel(i, j, System.Drawing.Color.FromArgb(218, 112, 214));
                     }
                     else if (C_gray >= color_5)
                     {
-                        image.SetPixel(i, j, Color.FromArgb(0, 192, 192));
+                        image.SetPixel(i, j, System.Drawing.Color.FromArgb(0, 192, 192));
                     }
                     else if (C_gray >= color_4)
                     {
-                        image.SetPixel(i, j, Color.FromArgb(255, 255, 0));
+                        image.SetPixel(i, j, System.Drawing.Color.FromArgb(255, 255, 0));
                     }
                     else if (C_gray >= color_3)
                     {
-                        image.SetPixel(i, j, Color.FromArgb(0, 0, 255));
+                        image.SetPixel(i, j, System.Drawing.Color.FromArgb(0, 0, 255));
                     }
                     else if (C_gray >= color_2)
                     {
-                        image.SetPixel(i, j, Color.FromArgb(0, 255, 0));
+                        image.SetPixel(i, j, System.Drawing.Color.FromArgb(0, 255, 0));
                     }
                     else
                     {
-                        image.SetPixel(i, j, Color.FromArgb(255, 0, 0));
+                        image.SetPixel(i, j, System.Drawing.Color.FromArgb(255, 0, 0));
                     }
                 }
             }
@@ -178,6 +196,9 @@ namespace image_processing3
 
         }
 
-      
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
