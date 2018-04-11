@@ -28,20 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btn_Open = new System.Windows.Forms.Button();
             this.btn_Intensity_Slicing = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.txt_green = new System.Windows.Forms.TextBox();
             this.txt_blue = new System.Windows.Forms.TextBox();
             this.txt_white = new System.Windows.Forms.TextBox();
@@ -50,9 +44,21 @@
             this.txt_red = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Open
@@ -94,69 +100,15 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 275);
+            this.label1.Location = new System.Drawing.Point(139, 275);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Color";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 299);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Red";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 324);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Green";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(70, 347);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Blue";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(243, 299);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "White";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(244, 323);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Black";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(244, 347);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Yellow";
-            // 
             // txt_green
             // 
-            this.txt_green.Location = new System.Drawing.Point(118, 316);
+            this.txt_green.Location = new System.Drawing.Point(57, 320);
             this.txt_green.Name = "txt_green";
             this.txt_green.Size = new System.Drawing.Size(100, 20);
             this.txt_green.TabIndex = 5;
@@ -164,7 +116,7 @@
             // 
             // txt_blue
             // 
-            this.txt_blue.Location = new System.Drawing.Point(118, 340);
+            this.txt_blue.Location = new System.Drawing.Point(57, 344);
             this.txt_blue.Name = "txt_blue";
             this.txt_blue.Size = new System.Drawing.Size(100, 20);
             this.txt_blue.TabIndex = 5;
@@ -172,7 +124,7 @@
             // 
             // txt_white
             // 
-            this.txt_white.Location = new System.Drawing.Point(284, 292);
+            this.txt_white.Location = new System.Drawing.Point(223, 296);
             this.txt_white.Name = "txt_white";
             this.txt_white.Size = new System.Drawing.Size(100, 20);
             this.txt_white.TabIndex = 5;
@@ -180,7 +132,7 @@
             // 
             // txt_black
             // 
-            this.txt_black.Location = new System.Drawing.Point(284, 316);
+            this.txt_black.Location = new System.Drawing.Point(223, 320);
             this.txt_black.Name = "txt_black";
             this.txt_black.Size = new System.Drawing.Size(100, 20);
             this.txt_black.TabIndex = 5;
@@ -188,7 +140,7 @@
             // 
             // txt_yellow
             // 
-            this.txt_yellow.Location = new System.Drawing.Point(284, 340);
+            this.txt_yellow.Location = new System.Drawing.Point(223, 344);
             this.txt_yellow.Name = "txt_yellow";
             this.txt_yellow.Size = new System.Drawing.Size(100, 20);
             this.txt_yellow.TabIndex = 5;
@@ -196,7 +148,7 @@
             // 
             // txt_red
             // 
-            this.txt_red.Location = new System.Drawing.Point(118, 294);
+            this.txt_red.Location = new System.Drawing.Point(57, 298);
             this.txt_red.Name = "txt_red";
             this.txt_red.Size = new System.Drawing.Size(100, 20);
             this.txt_red.TabIndex = 5;
@@ -204,17 +156,17 @@
             // 
             // chart1
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chart1.Legends.Add(legend9);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(406, 275);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chart1.Series.Add(series9);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(304, 186);
             this.chart1.TabIndex = 16;
             this.chart1.Text = "chart";
@@ -223,11 +175,71 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Red;
+            this.pictureBox3.Location = new System.Drawing.Point(23, 296);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(28, 19);
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.pictureBox4.Location = new System.Drawing.Point(23, 320);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(28, 19);
+            this.pictureBox4.TabIndex = 17;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Blue;
+            this.pictureBox5.Location = new System.Drawing.Point(23, 344);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(28, 19);
+            this.pictureBox5.TabIndex = 17;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.White;
+            this.pictureBox6.Location = new System.Drawing.Point(189, 297);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(28, 19);
+            this.pictureBox6.TabIndex = 17;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Black;
+            this.pictureBox7.Location = new System.Drawing.Point(189, 320);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(28, 19);
+            this.pictureBox7.TabIndex = 17;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Yellow;
+            this.pictureBox8.Location = new System.Drawing.Point(189, 344);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(28, 19);
+            this.pictureBox8.TabIndex = 17;
+            this.pictureBox8.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 510);
+            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.txt_yellow);
             this.Controls.Add(this.txt_black);
@@ -235,12 +247,6 @@
             this.Controls.Add(this.txt_blue);
             this.Controls.Add(this.txt_red);
             this.Controls.Add(this.txt_green);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -251,6 +257,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,12 +275,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_green;
         private System.Windows.Forms.TextBox txt_blue;
         private System.Windows.Forms.TextBox txt_white;
@@ -277,6 +283,12 @@
         private System.Windows.Forms.TextBox txt_red;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
 

@@ -54,6 +54,7 @@ namespace image_processing3
         {
             colorYellow = Int32.Parse(txt_yellow.Text);
         }
+
         private void btn_Open_Click(object sender, EventArgs e)
         {
             {
@@ -87,123 +88,93 @@ namespace image_processing3
                     }
                 }
                 pictureBox1.Image = f_image;
+
+                double[] runningSum = new double[256];
+                int[] countColor = new int[256];
+                int pixel = f_image.Height * f_image.Width;
+                int color = 255;
+                for (int i = 0; i < f_image.Width; i++)
+                {
+                    for (int j = 0; j < f_image.Height; j++)
+                    {
+                        Color PixelColor = f_image.GetPixel(i, j);
+                        int C_gray = (int)(PixelColor.R + PixelColor.G + PixelColor.B) / 3;
+                        countColor[C_gray]++;
+                    }
+                }
+                //running sum
+                runningSum[0] = countColor[0];
+                for (int i = 1; i < 256; i++)
+                {
+                    runningSum[i] = runningSum[i - 1] + countColor[i];
+                    //Console.WriteLine(countColor[i] +"//"+ runningSum[i]);
+                }
+
+                for (int i = 0; i < 256; i++)
+                {
+                    runningSum[i] = Math.Round(runningSum[i] / pixel * color);
+                    //Console.WriteLine(runningSum[i]);
+                }
+
+                image = new Bitmap(f_image.Width, f_image.Height);
+                for (int i = 0; i < f_image.Width; i++)
+                {
+                    for (int j = 0; j < f_image.Height; j++)
+                    {
+                        Color PixelColor = f_image.GetPixel(i, j);
+                        int C_gray = (int)(PixelColor.R + PixelColor.G + PixelColor.B) / 3;
+                        int NewColor = (int)runningSum[C_gray];
+                        image.SetPixel(i, j, Color.FromArgb(NewColor, NewColor, NewColor));
+                    }
+                }
                 pictureBox2.Image = image;
             }
         }
 
-        int freRed = 0;
-        int freWhite = 0;
-        int freGreen = 0;
-        int freBlue = 0;
-        int freBlack = 0;
-        int freYellow = 0;
-
-        private void match_color(int color, int i, int j)
-        {
-            if (color == colorRed)
-            {
-                image.SetPixel(j, i, Color.FromArgb(255, 0, 0));
-                freRed++;
-            }
-            else if (color == colorWhite)
-            {
-                image.SetPixel(j, i, Color.FromArgb(255, 255, 255));
-                freWhite++;
-            }
-            else if (color == colorGreen)
-            {
-                image.SetPixel(j, i, Color.FromArgb(0, 255, 0));
-                freGreen++;
-            }
-            else if (color == colorBlue)
-            {
-                image.SetPixel(j, i, Color.FromArgb(0, 0, 255));
-                freBlue++;
-            }
-            else if (color == colorBlack)
-            {
-                image.SetPixel(j, i, Color.FromArgb(0, 0, 0));
-                freBlack++;
-            }
-            else
-            {
-                image.SetPixel(j, i, Color.FromArgb(255, 255, 0));
-                freYellow++;
-            }
-        }
         private void btn_Intensity_Slicing_Click(object sender, EventArgs e)
         {
-            int[] color = new int[6];
-            color[0] = colorRed;
-            color[1] = colorWhite;
-            color[2] = colorGreen;
-            color[3] = colorBlue;
-            color[4] = colorBlack;
-            color[5] = colorYellow;
-            freRed = 0;
-            freWhite = 0;
-            freGreen = 0;
-            freBlue = 0;
-            freBlack = 0;
-            freYellow = 0;
-            Array.Sort(color);
-            //txtLevelWhite.Text = Convert.ToString(colorRed);
-            for (int i = 0; i < f_image.Height; i++)
+
+            int color_1 = Convert.ToInt32(txt_red.Text);
+            int color_2 = Convert.ToInt32(txt_green.Text);
+            int color_3 = Convert.ToInt32(txt_blue.Text);
+            int color_4 = Convert.ToInt32(txt_white.Text);
+            int color_5 = Convert.ToInt32(txt_black.Text);
+            int color_6 = Convert.ToInt32(txt_yellow.Text);
+
+            for (int i = 0; i < f_image.Width; i++)
             {
-                for (int j = 0; j < f_image.Width; j++)
+                for (int j = 0; j < f_image.Height; j++)
                 {
-                    Color PixelColor = f_image.GetPixel(j, i);
+                    Color PixelColor = f_image.GetPixel(i, j);
                     int C_gray = (int)(PixelColor.R + PixelColor.G + PixelColor.B) / 3;
-                    if (C_gray > color[0])
+
+                    if (C_gray >= color_6)
                     {
-                        if (C_gray > color[1])
-                        {
-                            if (C_gray > color[2])
-                            {
-                                if (C_gray > color[3])
-                                {
-                                    if (C_gray > color[4])
-                                    {
-                                        match_color(color[5], i, j);
-                                    }                                   
-                                    else
-                                    {
-                                        match_color(color[4], i, j);
-                                    }
-                                }
-                                else
-                                {
-                                    match_color(color[3], i, j);
-                                }
-                            }
-                            else
-                            {
-                                match_color(color[2], i, j);
-                            }
-                        }
-                        else
-                        {
-                            match_color(color[1], i, j);
-                        }
+                        image.SetPixel(i, j, Color.FromArgb(218, 112, 214));
+                    }
+                    else if (C_gray >= color_5)
+                    {
+                        image.SetPixel(i, j, Color.FromArgb(0, 192, 192));
+                    }
+                    else if (C_gray >= color_4)
+                    {
+                        image.SetPixel(i, j, Color.FromArgb(255, 255, 0));
+                    }
+                    else if (C_gray >= color_3)
+                    {
+                        image.SetPixel(i, j, Color.FromArgb(0, 0, 255));
+                    }
+                    else if (C_gray >= color_2)
+                    {
+                        image.SetPixel(i, j, Color.FromArgb(0, 255, 0));
                     }
                     else
                     {
-                        match_color(color[0], i, j);
+                        image.SetPixel(i, j, Color.FromArgb(255, 0, 0));
                     }
-                    
                 }
             }
             pictureBox2.Image = image;
-            foreach (var series in chart1.Series)
-            {
-                series.Points.Clear();
-            }
-            this.chart1.Series["Color"].Points.AddXY("Red", freRed);
-            this.chart1.Series["Color"].Points.AddXY("White", freWhite);
-            this.chart1.Series["Color"].Points.AddXY("Green", freGreen);
-            this.chart1.Series["Color"].Points.AddXY("Blue", freBlue);
-            this.chart1.Series["Color"].Points.AddXY("Black", freBlue);
-            this.chart1.Series["Color"].Points.AddXY("Yellow", freBlue);
 
         }
 

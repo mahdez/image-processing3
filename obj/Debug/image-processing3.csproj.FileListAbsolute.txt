@@ -6,3 +6,4 @@ c:\users\mahde\documents\visual studio 2015\Projects\image-processing3\image-pro
 c:\users\mahde\documents\visual studio 2015\Projects\image-processing3\image-processing3\obj\Debug\image-processing3.csproj.GenerateResource.Cache
 c:\users\mahde\documents\visual studio 2015\Projects\image-processing3\image-processing3\obj\Debug\image-processing3.exe
 c:\users\mahde\documents\visual studio 2015\Projects\image-processing3\image-processing3\obj\Debug\image-processing3.pdb
+C:\Users\mahde\documents\visual studio 2015\Projects\image-processing3\image-processing3\obj\Debug\image-processing3.csprojResolveAssemblyReference.cache
